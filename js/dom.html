@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header_container">
+        <h2 id="header_text"> DOM</h2>
+        <p class="header_data"> Document Object Model </p>
+        <p class="header_data"> Document Object Model </p>
+        <p class="header_data"> Document Object Model </p>
+        <p class="header_data"> Document Object Model </p>
+    </div>
+
+    <!-- <form action="" > -->
+        <input  type="text" name="name" id="name_input" placeholder="Enter Your Name">
+        <input type="email" id="email_input" name="email" placeholder="Enter Email"  >
+        <button  id="submit_button"> submit </button>
+        <button type="reset">reset </button>
+    <!-- </form> -->
+
+     <!-- data list showing  -->
+    <div class="todo_list" style="border: solid 1px red; padding: 4px; margin: 10px;">
+          <h2> Data List </h2>
+          <!-- <div> name - email </div> -->
+
+    </div>
+
+    <script>
+
+       const headerText = document.getElementById("header_text")
+
+       const todoLIst = document.querySelector(".todo_list")
+
+       headerText.addEventListener("click" , ()=>{
+         console.log("----->",headerText.innerText)
+         headerText.innerText = "Document Object Model"
+
+       })
+
+       const name = document.getElementById("name_input")
+       const email = document.getElementById("email_input")
+
+       const submitBtn = document.getElementById("submit_button")
+
+       submitBtn.addEventListener("click" , ()=>{
+           let namevalue = name.value
+           let emailValue = email.value
+           console.log("---->" , namevalue , emailValue)
+
+           const newData = document.createElement("div")
+
+           newData.classList.add("data")
+    
+           newData.innerHTML = `${namevalue} - ${emailValue} <button class="delete" > Delete </button>`
+           todoLIst.appendChild(newData);
+
+           newData.querySelector(".delete").addEventListener("click" , ()=>{
+                todoLIst.removeChild(newData)
+           })
+
+           namevalue = ""
+           console.log("---> "  , name.value)
+           name.value = ""
+           email.value =""
+
+       })
+
+   
+
+       //console.log("--- todo list ---->" , todoLIst.innerText) -->
+
+       
+
+       
+
+
+
+
+    </script>
+
+</body>
+</html>
