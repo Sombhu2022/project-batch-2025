@@ -11,7 +11,7 @@ const server = express()
 server.use(corsConfig)
 server.use(bodyParser.json({ limit: "50mb" }))
 server.use(express.json({ limit : "50mb"}))
-server.use( bodyParser.urlencoded( { limit : "50mb" , extended : true }) )
+server.use(bodyParser.urlencoded( { limit : "50mb" , extended : true }) )
 
 // all routes 
 
