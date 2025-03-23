@@ -8,9 +8,10 @@ export const validate = (schema) => (req, res, next) => {
       query: req.query,
       params: req.params,
     })
-
+    
     // If validation passes, proceed to the next middleware/controller
     next()
+
   } catch (error) {
     // If validation fails, extract and format error messages
     const errors = error.errors.map((err) => ({

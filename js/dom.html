@@ -43,9 +43,12 @@
        const name = document.getElementById("name_input")
        const email = document.getElementById("email_input")
 
+
+
        const submitBtn = document.getElementById("submit_button")
 
        submitBtn.addEventListener("click" , ()=>{
+        console.info("=========> event info" , name , email)
            let namevalue = name.value
            let emailValue = email.value
            console.log("---->" , namevalue , emailValue)
@@ -71,12 +74,6 @@
    
 
        //console.log("--- todo list ---->" , todoLIst.innerText) -->
-
-       
-
-       
-
-
 
 
     </script>
